@@ -13,9 +13,6 @@ const LandingPage = ({navigation}) => {
           marginHorizontal : 70,
           height : 250,
           width : 230,
-          borderColor : "#000000",
-          borderStyle : "solid",
-          borderWidth : 2
         },
         h1 : {
             fontSize : 30,
@@ -42,7 +39,7 @@ const LandingPage = ({navigation}) => {
 
     return(
         <View>
-            <View style={styles.logo}></View>
+            <Image style={styles.logo} source={require("../assets/hero.png")} />
             <Text style={styles.h1}>Disciplinify</Text>
             <Text style={styles.text}>is the place to improve</Text>
             <TouchableOpacity style={styles.button} onPress={eventHandler}>
