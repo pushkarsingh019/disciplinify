@@ -1,6 +1,5 @@
 import { useStoreState } from "easy-peasy";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import store from "../lib/store";
 
 const Home = ({navigation}) => {
 
