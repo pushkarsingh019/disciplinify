@@ -1,8 +1,12 @@
+import { useStoreState } from "easy-peasy";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import store from "../lib/store";
 
-const Home = ({navigation, route}) => {
+const Home = ({navigation}) => {
 
-    const {name} = route.params;
+    const userData = useStoreState(state => state.userData)
+    const {name} = userData;
+
     const styles = StyleSheet.create({
         horizontalPadding : {
             paddingHorizontal : 25
