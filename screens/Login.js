@@ -1,5 +1,7 @@
 import { ScrollView, StyleSheet, Text, TextInput, View, SafeAreaView, TouchableOpacity } from "react-native";
 import { useState } from "react";
+import applicationState from "../lib/store";
+import { useStoreActions } from "easy-peasy";
 
 const Login = ({navigation}) => {
 
@@ -7,6 +9,7 @@ const Login = ({navigation}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const addUserData = useStoreActions(actions => actions.addUserData);
 
     const styles = StyleSheet.create({
         h3 : {
@@ -39,7 +42,8 @@ const Login = ({navigation}) => {
             email,
             password
         };
-        navigation.navigate("Home", userDetails)
+        addUserData(userDetails);
+        navigation.navigate("Home")
     };
 
 
